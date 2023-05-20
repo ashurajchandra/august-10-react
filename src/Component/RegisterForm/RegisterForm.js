@@ -44,7 +44,9 @@ export default function RegisterForm() {
           value={userInputValues?.password}
           name='password'
           onChange={handleInputOnChange}
+
         />
+       
         <input
           type='password'
           placeholder='enter your password'
@@ -54,6 +56,7 @@ export default function RegisterForm() {
         />
         <input type='submit' />
       </form>
+      <button>see pass</button>
     </React.Fragment>
   );
 }
