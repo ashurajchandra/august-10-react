@@ -13,6 +13,8 @@ export default function Signup() {
   })
 
   const [toggle , setToggle] = useState(false)
+  const [type, setType] = useState("password")
+  const [toggleType, setToggleType] = useState(true)
 
   console.log("signup render ")
 //   const [email, setEmail] = useState('')
@@ -74,8 +76,11 @@ const userRegister = async()=>{
   console.log("response",response)
 }
 
-
-
+const handleUpdateType = ()=>{
+  // setType("text")
+  setToggleType(!toggleType)
+}
+console.log("toggleType", toggleType)
   return (
    <React.Fragment>
     <button className={toggle?'toggle-bg': 'toggle'} onClick={handleToggle}>Toggle Me</button>
@@ -84,10 +89,11 @@ const userRegister = async()=>{
    <form onSubmit={handleSubmit} className="form-field-wrapper">
   <CustomInput name="name" type="text" value ={userInputField.name} placeholder="Please Enter name" handleChange={handleOnChange} />
   <CustomInput name="email" type="email" value ={userInputField.email} placeholder="Please Enter email" handleChange={handleOnChange}/>
-  <CustomInput name="password" type="password" value ={userInputField.password} placeholder="Please Enter password" handleChange={handleOnChange}/>
+  <CustomInput name="password" type={toggleType?'password':"text"} value ={userInputField.password} placeholder="Please Enter password" handleChange={handleOnChange}/>
   <CustomInput name="confirmPassword" type="password" value ={userInputField.confirmPassword} placeholder="Please Enter confirmPassword" handleChange={handleOnChange}/>
   <button type='submit'> Submit</button>
    </form>
+   <button className='input-toggle-button' onClick={handleUpdateType}>{toggleType?'see':'hide'}</button>
  </div>
 
    </React.Fragment>
