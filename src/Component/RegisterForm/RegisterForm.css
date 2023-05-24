@@ -1,0 +1,17 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    border: 2px solid red;
+    height: 300px;
+    justify-content: space-around;
+    padding: 10%;
+    margin: auto;
+}
+
+
+.form-container input{
+    height: 30px;
+    padding: 5px;
+    width: 60%;
+}

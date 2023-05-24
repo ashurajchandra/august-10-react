@@ -1,0 +1,47 @@
+.signup-container{
+    height: 450px;
+    width: 500px;
+    border: 2px solid grey;
+    margin: auto;
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+
+}
+.form-heading{
+    margin-bottom: 20px;
+}
+
+.form-field-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+}
+
+.form-field-wrapper input{
+    height: 30px;
+    /* margin-left: 2px; */
+    padding: 5px;
+}
+
+.form-field-wrapper button{
+    height: 30px;
+    padding: 5px;
+    position: relative;
+}
+.toggle-bg{
+    background-color: antiquewhite;
+}
+.toggle{
+    background-color: aquamarine;
+}
+
+.input-toggle-button{
+    width: 35px;
+    position: absolute;
+    top: 55%;
+    left: 63%;
+}
