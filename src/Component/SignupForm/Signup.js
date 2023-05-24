@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import CustomInput from '../Common/CustomInput/CustomInput';
 import './Signup.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
 
@@ -15,6 +16,7 @@ export default function Signup() {
   const [toggle , setToggle] = useState(false)
   const [type, setType] = useState("password")
   const [toggleType, setToggleType] = useState(true)
+  const navigate = useNavigate()
 
   console.log("signup render ")
 //   const [email, setEmail] = useState('')
@@ -71,9 +73,16 @@ const handleToggle = () =>{
 
 
 const userRegister = async()=>{
+try{
   const payload = userInputField
   const response =  await axios.post('http://localhost:8000/user/register', userInputField )
   console.log("response",response)
+  navigate("/login")
+  
+
+}catch(error){
+  console.log("Error in registering user", error)
+}
 }
 
 const handleUpdateType = ()=>{
